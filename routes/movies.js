@@ -14,7 +14,6 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
       const movie = await Movie.findById(req.params.id)
-      console.log(movie)
       res.render('movie', { movie })
     } catch (error) {
       next(error)
